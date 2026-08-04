@@ -1,1 +1,97 @@
+h1 {
+    color: #744889;
+    font-size: 40px;
+    text-align: center;
+}
+
+h2{
+    color:#28192F;
+    font-size: 20px;
+}
+
+p {
+    color: #181818;
+}
+
+a {
+   color:#6044BB;
+   text-decoration: none;
+}
+
+.cargo {
+    color:#6044BB;
+    font-weight: bold;
+}
+
+.link-social {
+    color:#b7ddd0;
+    text-decoration: none;
+}
+
+#hero{
+    background-color: #8cc2e5;
+}
+
+#sobre{
+    background-color: #b7ddd0;
+}
+
+#projetos{
+    background-color: #85cad6;
+}
+
+#contato{
+    background-color: #85cad6;
+}
+
+footer{
+    background-color: #7fc7e9;
+}
+footer p{
+    color:#13096D;
+}
+
+#hero h1{
+    /*padding-top: 50px;*/
+    margin: 70px;
+    border: 50px solid black;
+    color:#13096D;
+}
+
+#hero img {
+    width: 350px;
+    height: auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#sobre {
+    background-color: #ade1ff;
+}
+
+#habilkidades {
+    background-color: #4c3eceb7;
+}
+
+#projetos {
+    background-color: #7b45c2;
+}
+
+#contato {
+    background-color: #6c8faf;
+}
+
+#footer {
+    background-color: #9387ff;
+}
+
+footer p {
+    color: #8b85c0;
+}
+
+body {
+    font-family: arial, sans-serif;
+}
 
