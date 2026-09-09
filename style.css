@@ -1,97 +1,610 @@
-h1 {
-    color: #744889;
-    font-size: 40px;
-    text-align: center;
+/* ================================
+   PALETA DE CORES
+================================ */
+:root {
+    --azul-escuro: #172554;
+    --azul: #2563eb;
+    --azul-claro: #60a5fa;
+    --azul-petroleo: #0f766e;
+    --verde-agua: #99f6e4;
+    --lilas: #a5b4fc;
+    --fundo: #eff6ff;
+    --fundo-secundario: #dbeafe;
+    --branco: #ffffff;
+    --texto: #172033;
+    --texto-claro: #64748b;
+    --sombra: rgba(37, 99, 235, 0.18);
 }
 
-h2{
-    color:#28192F;
-    font-size: 20px;
-}
 
-p {
-    color: #181818;
-}
-
-a {
-   color:#6044BB;
-   text-decoration: none;
-}
-
-.cargo {
-    color:#6044BB;
-    font-weight: bold;
-}
-
-.link-social {
-    color:#b7ddd0;
-    text-decoration: none;
-}
-
-#hero{
-    background-color: #8cc2e5;
-}
-
-#sobre{
-    background-color: #b7ddd0;
-}
-
-#projetos{
-    background-color: #85cad6;
-}
-
-#contato{
-    background-color: #85cad6;
-}
-
-footer{
-    background-color: #7fc7e9;
-}
-footer p{
-    color:#13096D;
-}
-
-#hero h1{
-    /*padding-top: 50px;*/
-    margin: 70px;
-    border: 50px solid black;
-    color:#13096D;
-}
-
-#hero img {
-    width: 350px;
-    height: auto;
-}
-
+/* ================================
+   CONFIGURAÇÕES GERAIS
+================================ */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-#sobre {
-    background-color: #ade1ff;
-}
-
-#habilkidades {
-    background-color: #4c3eceb7;
-}
-
-#projetos {
-    background-color: #7b45c2;
-}
-
-#contato {
-    background-color: #6c8faf;
-}
-
-#footer {
-    background-color: #9387ff;
-}
-
-footer p {
-    color: #8b85c0;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
 }
 
+
+/* ================================
+   TÍTULOS E TEXTOS
+================================ */
+h1 {
+    color: var(--azul-escuro);
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: var(--azul-claro);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+p {
+    color: var(--texto);
+    font-size: 1.15rem;
+}
+
+a {
+    color: var(--azul);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--azul-petroleo);
+}
+
+
+/* ================================
+   HEADER / MENU
+================================ */
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 20px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 4px 20px rgba(23, 37, 84, 0.08);
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--azul-escuro);
+    font-weight: bold;
+    position: relative;
+    padding: 8px 5px;
+}
+
+
+/* Linha embaixo do link */
+nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        var(--azul),
+        var(--azul-petroleo)
+    );
+
+    border-radius: 10px;
+
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* ================================
+   HERO
+================================ */
+#hero {
+    min-height: 85vh;
+
+    padding: 80px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #172554,
+        #1e40af,
+        #0f766e
+    );
+
+    border-radius: 0 0 40px 40px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Círculos decorativos */
+#hero::before,
+#hero::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(2px);
+
+    opacity: 0.25;
+}
+
+#hero::before {
+    width: 300px;
+    height: 300px;
+
+    background-color: var(--azul-claro);
+
+    top: -100px;
+    left: -100px;
+}
+
+#hero::after {
+    width: 400px;
+    height: 400px;
+
+    background-color: var(--verde-agua);
+
+    bottom: -200px;
+    right: -100px;
+}
+
+
+/* Título do Hero */
+#hero h1 {
+    margin: 20px;
+    padding: 10px;
+
+    color: var(--branco);
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Texto do Hero */
+#hero p {
+    color: #dbeafe;
+
+    max-width: 700px;
+
+    margin-bottom: 30px;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ================================
+   IMAGEM DO HERO
+================================ */
+#hero img {
+    width: 200px;
+    height: 200px;
+
+    object-fit: cover;
+
+    padding: 7px;
+
+    border-radius: 50%;
+
+    border: 5px solid var(--verde-agua);
+
+    box-shadow:
+        0 0 0 8px rgba(153, 246, 228, 0.15),
+        0 15px 35px rgba(0, 0, 0, 0.25);
+
+    transition: all 0.4s ease;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Efeito ao passar o mouse */
+#hero img:hover {
+    transform: scale(1.08) rotate(2deg);
+
+    box-shadow:
+        0 0 0 12px rgba(153, 246, 228, 0.2),
+        0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ================================
+   BOTÕES
+================================ */
+button,
+.botao {
+    display: block;
+    margin: 20px auto;
+
+    padding: 13px 28px;
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        var(--azul),
+        var(--azul-petroleo)
+    );
+
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px var(--sombra);
+
+    transition: all 0.3s ease;
+}
+
+button:hover,
+.botao:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(37, 99, 235, 0.3);
+}
+
+
+/* ================================
+   SEÇÕES
+================================ */
+#sobre,
+#habilidades,
+#projetos,
+#contato {
+    padding: 80px 7%;
+}
+
+#sobre {
+    background-color: var(--fundo);
+}
+
+#habilidades {
+    background-color: var(--fundo-secundario);
+}
+
+#projetos {
+    background: linear-gradient(
+        135deg,
+        #dbeafe,
+        #e0e7ff
+    );
+}
+
+#contato {
+    background-color: var(--fundo);
+}
+
+
+/* ================================
+   CARGO
+================================ */
+.cargo {
+    color: var(--azul-petroleo);
+    font-weight: bold;
+}
+
+
+/* ================================
+   HABILIDADES
+================================ */
+.habilidades-lista {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+.habilidade {
+    background-color: var(--branco);
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    min-width: 180px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px rgba(23, 37, 84, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+
+/* Efeito nas habilidades */
+.habilidade:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 30px rgba(37, 99, 235, 0.18);
+}
+
+
+/* ================================
+   PROJETOS
+================================ */
+.projetos-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.projeto {
+    background-color: var(--branco);
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(37, 99, 235, 0.1);
+
+    box-shadow:
+        0 10px 30px rgba(23, 37, 84, 0.1);
+
+    transition: all 0.35s ease;
+}
+
+
+/* Efeito dos projetos */
+.projeto:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 40px rgba(37, 99, 235, 0.2);
+}
+
+.projeto h3 {
+    color: var(--azul-escuro);
+
+    margin-bottom: 10px;
+}
+
+.projeto p {
+    color: var(--texto-claro);
+
+    font-size: 1rem;
+}
+
+
+/* ================================
+   LINKS SOCIAIS
+================================ */
+.link-social {
+    color: var(--azul-petroleo);
+
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+.link-social:hover {
+    color: var(--azul);
+
+    transform: translateX(5px);
+}
+
+
+/* ================================
+   FORMULÁRIO
+================================ */
+form {
+    max-width: 650px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border: 2px solid #bfdbfe;
+
+    border-radius: 15px;
+
+    background-color: var(--branco);
+
+    color: var(--texto);
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Quando clicar no campo */
+input:focus,
+textarea:focus {
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.12);
+
+    transform: translateY(-2px);
+}
+
+textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+footer,
+#footer {
+    background-color: var(--azul-escuro);
+
+    padding: 35px 20px;
+
+    text-align: center;
+}
+
+footer p {
+    color: #bfdbfe;
+
+    font-size: 1rem;
+}
+
+
+/* ================================
+   ANIMAÇÃO
+================================ */
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* Aplicando a animação */
+#hero h1,
+#hero p,
+#hero img {
+    animation: aparecer 0.8s ease forwards;
+}
+
+
+/* ================================
+   RESPONSIVIDADE - TABLET
+================================ */
+@media (max-width: 900px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .projetos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ================================
+   RESPONSIVIDADE - CELULAR
+================================ */
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+    }
+
+    nav {
+        gap: 10px;
+
+        font-size: 0.9rem;
+    }
+
+    #hero {
+        min-height: 75vh;
+
+        padding: 60px 20px;
+    }
+
+    #hero img {
+        width: 160px;
+
+        height: 160px;
+    }
+
+    #sobre,
+    #habilidades,
+    #projetos,
+    #contato {
+        padding: 55px 20px;
+    }
+
+    .projetos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+}
