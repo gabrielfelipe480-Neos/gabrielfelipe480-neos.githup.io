@@ -1,25 +1,33 @@
-/* ================================
+
+/* =========================================
    PALETA DE CORES
-================================ */
+   ========================================= */
+
 :root {
-    --azul-escuro: #172554;
-    --azul: #2563eb;
-    --azul-claro: #60a5fa;
-    --azul-petroleo: #0f766e;
-    --verde-agua: #99f6e4;
-    --lilas: #a5b4fc;
-    --fundo: #eff6ff;
-    --fundo-secundario: #dbeafe;
+    --azul-escuro: #0f172a;
+    --azul: #1d4ed8;
+    --azul-claro: #3b82f6;
+
+    --amarelo: #facc15;
+    --amarelo-escuro: #ca8a04;
+
+    --cinza: #475569;
+    --cinza-claro: #cbd5e1;
+
+    --fundo: #f1f5f9;
     --branco: #ffffff;
-    --texto: #172033;
-    --texto-claro: #64748b;
-    --sombra: rgba(37, 99, 235, 0.18);
+    --preto: #020617;
+
+    --texto: #1e293b;
+
+    --sombra: rgba(15, 23, 42, 0.15);
 }
 
 
-/* ================================
+/* =========================================
    CONFIGURAÇÕES GERAIS
-================================ */
+   ========================================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -38,573 +46,536 @@ body {
 }
 
 
-/* ================================
+/* =========================================
    TÍTULOS E TEXTOS
-================================ */
+   ========================================= */
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
 h1 {
-    color: var(--azul-escuro);
-    font-size: clamp(2.2rem, 5vw, 4rem);
-    text-align: center;
-    margin-bottom: 15px;
+    color: var(--branco);
+    font-size: 2.5rem;
+    margin-bottom: 5px;
 }
 
 h2 {
-    color: var(--azul-claro);
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--azul-escuro);
     text-align: center;
+    font-size: 2rem;
     margin-bottom: 30px;
 }
 
+h3 {
+    color: var(--azul-escuro);
+    margin-bottom: 8px;
+}
+
 p {
-    color: var(--texto);
-    font-size: 1.15rem;
+    color: var(--cinza);
+    font-size: 1rem;
 }
 
 a {
     color: var(--azul);
     text-decoration: none;
-    transition: all 0.3s ease;
 }
 
 a:hover {
-    color: var(--azul-petroleo);
+    color: var(--amarelo-escuro);
 }
 
 
-/* ================================
-   HEADER / MENU
-================================ */
-header {
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    padding: 20px 7%;
+/* =========================================
+   CABEÇALHO
+   ========================================= */
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header {
+    background-color: var(--azul-escuro);
+
+    padding: 25px 7%;
+
+    text-align: center;
+
+    border-bottom: 5px solid var(--amarelo);
 
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    box-shadow: 0 4px 20px rgba(23, 37, 84, 0.08);
+    box-shadow: 0 5px 15px var(--sombra);
 }
+
+header p {
+    color: var(--cinza-claro);
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   MENU
+   ========================================= */
 
 nav {
     display: flex;
+
+    justify-content: center;
+    align-items: center;
+
     gap: 25px;
+
+    margin-top: 20px;
 }
 
 nav a {
-    color: var(--azul-escuro);
+    color: var(--branco);
+
     font-weight: bold;
-    position: relative;
+
     padding: 8px 5px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--amarelo);
 }
 
 
-/* Linha embaixo do link */
-nav a::after {
-    content: "";
+/* =========================================
+   BOTÃO
+   ========================================= */
 
-    position: absolute;
-    left: 0;
-    bottom: 0;
+#botaoSobre {
+    background-color: var(--azul);
 
-    width: 0;
-    height: 3px;
+    color: var(--branco);
 
-    background: linear-gradient(
-        90deg,
-        var(--azul),
-        var(--azul-petroleo)
-    );
+    border: 2px solid var(--amarelo);
 
-    border-radius: 10px;
+    border-radius: 5px;
 
-    transition: width 0.3s ease;
+    padding: 12px 25px;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin: 15px 0;
+
+    transition: 0.3s;
+
+    box-shadow: 4px 4px 0 var(--cinza);
 }
 
-nav a:hover::after {
-    width: 100%;
+#botaoSobre:hover {
+    background-color: var(--amarelo);
+
+    color: var(--azul-escuro);
+
+    transform: translateY(-3px);
+
+    box-shadow: 6px 6px 0 var(--azul);
+}
+
+#botaoSobre:active {
+    transform: translateY(1px);
+
+    box-shadow: 2px 2px 0 var(--azul);
 }
 
 
-/* ================================
-   HERO
-================================ */
+/* =========================================
+   APRESENTAÇÃO
+   ========================================= */
+
 #hero {
-    min-height: 85vh;
+    min-height: 80vh;
 
-    padding: 80px 20px;
+    padding: 70px 20px;
 
     display: flex;
+
     flex-direction: column;
-    align-items: center;
+
     justify-content: center;
+
+    align-items: center;
 
     text-align: center;
 
     background: linear-gradient(
         135deg,
-        #172554,
-        #1e40af,
-        #0f766e
+        var(--preto),
+        var(--azul-escuro),
+        #1e3a8a
     );
 
-    border-radius: 0 0 40px 40px;
-
-    position: relative;
-    overflow: hidden;
+    border-bottom: 5px solid var(--amarelo);
 }
 
-
-/* Círculos decorativos */
-#hero::before,
-#hero::after {
-    content: "";
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    filter: blur(2px);
-
-    opacity: 0.25;
-}
-
-#hero::before {
-    width: 300px;
-    height: 300px;
-
-    background-color: var(--azul-claro);
-
-    top: -100px;
-    left: -100px;
-}
-
-#hero::after {
-    width: 400px;
-    height: 400px;
-
-    background-color: var(--verde-agua);
-
-    bottom: -200px;
-    right: -100px;
-}
-
-
-/* Título do Hero */
-#hero h1 {
-    margin: 20px;
-    padding: 10px;
-
+#hero h2 {
     color: var(--branco);
-
-    position: relative;
-    z-index: 1;
 }
 
-
-/* Texto do Hero */
 #hero p {
-    color: #dbeafe;
+    color: var(--cinza-claro);
 
     max-width: 700px;
 
-    margin-bottom: 30px;
+    margin: 20px auto;
 
-    position: relative;
-    z-index: 1;
+    font-size: 1.1rem;
 }
 
 
-/* ================================
-   IMAGEM DO HERO
-================================ */
+/* =========================================
+   FOTO
+   ========================================= */
+
 #hero img {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
 
     object-fit: cover;
 
-    padding: 7px;
-
     border-radius: 50%;
 
-    border: 5px solid var(--verde-agua);
+    border: 5px solid var(--amarelo);
 
-    box-shadow:
-        0 0 0 8px rgba(153, 246, 228, 0.15),
-        0 15px 35px rgba(0, 0, 0, 0.25);
+    background-color: var(--branco);
 
-    transition: all 0.4s ease;
+    padding: 5px;
 
-    position: relative;
-    z-index: 1;
+    margin: 20px 0;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+    transition: 0.3s;
 }
 
-
-/* Efeito ao passar o mouse */
 #hero img:hover {
-    transform: scale(1.08) rotate(2deg);
-
-    box-shadow:
-        0 0 0 12px rgba(153, 246, 228, 0.2),
-        0 20px 45px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
 }
 
 
-/* ================================
-   BOTÕES
-================================ */
-button,
-.botao {
-    display: block;
-    margin: 20px auto;
-
-    padding: 13px 28px;
-    border: none;
-    border-radius: 30px;
-
-    background: linear-gradient(
-        135deg,
-        var(--azul),
-        var(--azul-petroleo)
-    );
-
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-
-    cursor: pointer;
-
-    box-shadow: 0 8px 20px var(--sombra);
-
-    transition: all 0.3s ease;
-}
-
-button:hover,
-.botao:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 12px 25px rgba(37, 99, 235, 0.3);
-}
-
-
-/* ================================
+/* =========================================
    SEÇÕES
-================================ */
+   ========================================= */
+
 #sobre,
 #habilidades,
 #projetos,
 #contato {
-    padding: 80px 7%;
+    padding: 70px 7%;
 }
 
 #sobre {
-    background-color: var(--fundo);
+    background-color: var(--branco);
 }
 
 #habilidades {
-    background-color: var(--fundo-secundario);
-}
-
-#projetos {
-    background: linear-gradient(
-        135deg,
-        #dbeafe,
-        #e0e7ff
-    );
-}
-
-#contato {
     background-color: var(--fundo);
 }
 
-
-/* ================================
-   CARGO
-================================ */
-.cargo {
-    color: var(--azul-petroleo);
-    font-weight: bold;
+#projetos {
+    background-color: var(--cinza-claro);
 }
 
-
-/* ================================
-   HABILIDADES
-================================ */
-.habilidades-lista {
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 20px;
-}
-
-.habilidade {
+#contato {
     background-color: var(--branco);
-
-    padding: 25px;
-
-    border-radius: 20px;
-
-    min-width: 180px;
-
-    text-align: center;
-
-    box-shadow:
-        0 8px 25px rgba(23, 37, 84, 0.1);
-
-    transition: all 0.3s ease;
 }
 
 
-/* Efeito nas habilidades */
-.habilidade:hover {
-    transform: translateY(-8px);
+/* =========================================
+   SOBRE MIM
+   ========================================= */
 
-    box-shadow:
-        0 15px 30px rgba(37, 99, 235, 0.18);
-}
-
-
-/* ================================
-   PROJETOS
-================================ */
-.projetos-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.projeto {
-    background-color: var(--branco);
-
-    padding: 25px;
-
-    border-radius: 20px;
-
-    border: 1px solid rgba(37, 99, 235, 0.1);
-
-    box-shadow:
-        0 10px 30px rgba(23, 37, 84, 0.1);
-
-    transition: all 0.35s ease;
-}
-
-
-/* Efeito dos projetos */
-.projeto:hover {
-    transform: translateY(-10px);
-
-    box-shadow:
-        0 20px 40px rgba(37, 99, 235, 0.2);
-}
-
-.projeto h3 {
-    color: var(--azul-escuro);
-
-    margin-bottom: 10px;
-}
-
-.projeto p {
-    color: var(--texto-claro);
-
-    font-size: 1rem;
-}
-
-
-/* ================================
-   LINKS SOCIAIS
-================================ */
-.link-social {
-    color: var(--azul-petroleo);
-
-    font-weight: bold;
-
-    transition: all 0.3s ease;
-}
-
-.link-social:hover {
-    color: var(--azul);
-
-    transform: translateX(5px);
-}
-
-
-/* ================================
-   FORMULÁRIO
-================================ */
-form {
-    max-width: 650px;
+#sobre p {
+    max-width: 800px;
 
     margin: auto;
 
-    display: flex;
+    text-align: center;
 
-    flex-direction: column;
-
-    gap: 15px;
+    font-size: 1.1rem;
 }
 
-input,
-textarea {
-    width: 100%;
 
-    padding: 15px 18px;
+/* =========================================
+   HABILIDADES
+   ========================================= */
 
-    border: 2px solid #bfdbfe;
+.habilidade {
+    max-width: 900px;
 
-    border-radius: 15px;
+    margin: 0 auto 25px;
+
+    padding: 20px;
 
     background-color: var(--branco);
 
-    color: var(--texto);
+    border-left: 5px solid var(--azul);
 
-    font-size: 1rem;
+    border-radius: 5px;
 
-    outline: none;
+    box-shadow: 4px 4px 0 var(--cinza-claro);
 
-    transition: all 0.3s ease;
+    transition: 0.3s;
+}
+
+.habilidade:hover {
+    transform: translateY(-5px);
+
+    border-left-color: var(--amarelo);
+
+    box-shadow: 6px 6px 0 var(--amarelo);
+}
+
+.habilidade h3 {
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.habilidade p {
+    margin-bottom: 10px;
 }
 
 
-/* Quando clicar no campo */
-input:focus,
-textarea:focus {
-    border-color: var(--azul);
+/* =========================================
+   BARRA DE HABILIDADE
+   ========================================= */
 
-    box-shadow:
-        0 0 0 4px rgba(37, 99, 235, 0.12);
+.barra-habilidade {
+    width: 100%;
 
-    transform: translateY(-2px);
-}
+    height: 20px;
 
-textarea {
-    min-height: 150px;
-
-    resize: vertical;
-}
-
-
-/* ================================
-   FOOTER
-================================ */
-footer,
-#footer {
     background-color: var(--azul-escuro);
 
-    padding: 35px 20px;
+    border: 2px solid var(--cinza-claro);
 
+    border-radius: 3px;
+
+    overflow: hidden;
+}
+
+.barra-habilidade span {
+    display: block;
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        var(--azul),
+        var(--azul-claro)
+    );
+
+    border-right: 4px solid var(--amarelo);
+
+    transition: width 1s;
+}
+
+
+/* =========================================
+   PROJETOS
+   ========================================= */
+
+#projetos table {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    border-collapse: collapse;
+
+    background-color: var(--branco);
+
+    box-shadow: 0 5px 15px var(--sombra);
+}
+
+#projetos th {
+    background-color: var(--azul-escuro);
+
+    color: var(--branco);
+
+    padding: 15px;
+
+    text-align: left;
+}
+
+#projetos td {
+    padding: 15px;
+
+    border-bottom: 1px solid var(--cinza-claro);
+}
+
+#projetos tr:hover {
+    background-color: #e2e8f0;
+}
+
+
+/* =========================================
+   CONTATO
+   ========================================= */
+
+#contato {
     text-align: center;
 }
 
+#contato p {
+    margin: 10px 0;
+}
+
+#contato a {
+    font-weight: bold;
+}
+
+
+/* =========================================
+   RODAPÉ
+   ========================================= */
+
+footer {
+    background-color: var(--azul-escuro);
+
+    color: var(--branco);
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-top: 5px solid var(--amarelo);
+}
+
 footer p {
-    color: #bfdbfe;
+    color: var(--cinza-claro);
 
-    font-size: 1rem;
+    margin: 5px 0;
 }
 
 
-/* ================================
-   ANIMAÇÃO
-================================ */
-@keyframes aparecer {
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
 
-    from {
-        opacity: 0;
+/* Tablet */
 
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
-    }
-}
-
-
-/* Aplicando a animação */
-#hero h1,
-#hero p,
-#hero img {
-    animation: aparecer 0.8s ease forwards;
-}
-
-
-/* ================================
-   RESPONSIVIDADE - TABLET
-================================ */
-@media (max-width: 900px) {
-
-    header {
-        flex-direction: column;
-
-        gap: 15px;
-    }
+@media (max-width: 800px) {
 
     nav {
-        flex-wrap: wrap;
-
-        justify-content: center;
-
         gap: 15px;
+
+        flex-wrap: wrap;
     }
 
-    .projetos-grid {
-        grid-template-columns: repeat(2, 1fr);
+    #hero {
+        min-height: 70vh;
     }
+
 }
 
 
-/* ================================
-   RESPONSIVIDADE - CELULAR
-================================ */
+/* Celular */
+
 @media (max-width: 600px) {
 
     header {
-        padding: 15px;
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
     }
 
     nav {
         gap: 10px;
+    }
 
+    nav a {
         font-size: 0.9rem;
     }
 
     #hero {
-        min-height: 75vh;
-
-        padding: 60px 20px;
+        padding: 50px 20px;
     }
 
     #hero img {
-        width: 160px;
-
-        height: 160px;
+        width: 150px;
+        height: 150px;
     }
 
     #sobre,
     #habilidades,
     #projetos,
     #contato {
-        padding: 55px 20px;
+        padding: 50px 20px;
     }
 
-    .projetos-grid {
-        grid-template-columns: 1fr;
+    h2 {
+        font-size: 1.7rem;
     }
 
-    p {
-        font-size: 1rem;
+    #projetos {
+        overflow-x: auto;
+    }
+
+    #projetos table {
+        min-width: 500px;
     }
 
 }
+
+
+/* =========================================
+   MODO ESCURO
+   ========================================= */
+
+body.modo-escuro {
+    background-color: #020617;
+
+    color: var(--branco);
+}
+
+body.modo-escuro #sobre,
+body.modo-escuro #contato {
+    background-color: #0f172a;
+}
+
+body.modo-escuro #habilidades {
+    background-color: #020617;
+}
+
+body.modo-escuro #projetos {
+    background-color: #1e293b;
+}
+
+body.modo-escuro h2,
+body.modo-escuro h3 {
+    color: var(--branco);
+}
+
+body.modo-escuro p {
+    color: var(--cinza-claro);
+}
+
+body.modo-escuro .habilidade {
+    background-color: #1e293b;
+
+    border-color: var(--azul);
+}
+
+body.modo-escuro #projetos table {
+    background-color: #1e293b;
+}
+
+body.modo-escuro #projetos td {
+    color: var(--branco);
+}
+

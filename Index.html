@@ -1,174 +1,232 @@
+
 <!DOCTYPE html>
-<html lang="pt-Br">
+<html lang="pt-BR">
 
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="precconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-        <meta name="description" content="Portifolio de Gabriel Felipe"><meta>
+    <meta name="description" content="Portfólio de Gabriel Felipe">
 
-        <script src="script.js" defer></script> 
+    <link rel="stylesheet" href="style.css">
 
-        <title> Gabriel Felipe | Portifolio</title>  
-    </head>
-    
-    <body>
-        <header>
-            <h1>Gabriel Felipe</h1>
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-            <button id="botaoSobre"> Seja Bem Vindo</button>
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
 
-            <p>Desenvolvedor Front- end</p> |
+    <title>Gabriel Felipe | Portfólio</title>
+</head>
 
-            <nav>
-                <a href="#hero">Inicio</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#habilidades">Habilidade</a>
-                <a href="#contatos">Contatos</a>
-            </nav>
+<body>
 
-        </header>
+    <!-- Cabeçalho -->
+    <header>
 
-        <main>
-            <section id="hero">
+        <h1>Gabriel Felipe</h1>
 
-                <h2>Ola, eu sou Gabriel!</h2>
+        <p>Desenvolvedor Front-End</p>
 
-                <img
-                    src="imagensgabriel.png.jpeg"
-                    Alt="Foto de Gabriel Felipe">
-                    <p>
-                        Sou estudante de desenvolvimento web e estou construindomeu portfólio para compartilhar meus projetos e aprendizados.
-                    </p>
+        <button id="botaoSobre">Seja Bem-vindo!</button>
 
-            </section>
+        <!-- Menu -->
+        <nav>
+            <a href="#hero">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
 
-        <section id="sobre">
-            
-            <h2>sobre mim</h2>
+    </header>
+
+
+    <!-- Conteúdo principal -->
+    <main>
+
+        <!-- Apresentação -->
+        <section id="hero">
+
+            <h2>Olá, eu sou Gabriel!</h2>
+
+            <img 
+                src="imagens/imagensgabriel.png.jpeg"
+                alt="Foto de Gabriel Felipe"
+            >
 
             <p>
-                Tenho interesse em desenvolvimento Web e estou aprendendo
-                Html,Css e outras tecnologias para criar sites modernos.
+                Sou estudante de desenvolvimento web e Técnico em Mecatrônica.
+                Estou construindo meu portfólio para compartilhar meus projetos
+                e aprendizados.
             </p>
 
+            <p>
+                
+            </p>
 
-            <div id="conteudo-extra"></div>
-
-            
         </section>
 
 
-            <section eu ia="é">
+        <!-- Sobre mim -->
+        <section id="sobre">
 
-                <h2>Habilidades</h2>
+            <h2>Sobre mim</h2>
 
-                <ul>
-                    <li>Html</li>
-                    <li>JavaScript</li>
-                    <li>Css</li>
-                </ul>
-                
-            </section>
+            <p>
+                Tenho interesse em desenvolvimento Web e estou aprendendo
+                HTML, CSS e JavaScript. Futuramente, pretendo entrar no ramo
+                da indústria e aprender outras tecnologias para criar sites
+                e projetos.
+            </p>
 
-            <section eu ia="projéteis">
+            <!-- Conteúdo que pode ser usado pelo JavaScript -->
+            <div id="conteudo-extra"></div>
 
-                <h2>Projetos</h2>
+        </section>
 
-                <table  border="1">
-                    
-                   <tr>
-                       <td>Projeto</td>
-                       <td>Descrição</td>
-                   </tr>
 
-                   <tr>
-                       <td>Landing Page</td>
-                       <td>Pagina criada utilizando Html.</td>
-                   </tr> 
+        <!-- Habilidades -->
+        <section id="habilidades">
+
+            <h2>Minhas Habilidades</h2>
+
+            <!-- HTML -->
+            <div class="habilidade">
+
+                <h3>HTML</h3>
+
+                <p>Desenvolvimento de páginas web.</p>
+
+                <div class="barra-habilidade">
+                    <span style="width: 90%;"></span>
+                </div>
+
+            </div>
+
+
+            <!-- CSS -->
+            <div class="habilidade">
+
+                <h3>CSS</h3>
+
+                <p>Criação de layouts e estilização.</p>
+
+                <div class="barra-habilidade">
+                    <span style="width: 85%;"></span>
+                </div>
+
+            </div>
+
+
+            <!-- JavaScript -->
+            <div class="habilidade">
+
+                <h3>JavaScript</h3>
+
+                <p>Interações e funcionalidades para páginas.</p>
+
+                <div class="barra-habilidade">
+                    <span style="width: 70%;"></span>
+                </div>
+
+            </div>
+
+
+            <!-- Mecatrônica -->
+            <div class="habilidade">
+
+                <h3>Mecatrônica</h3>
+
+                <p>Conhecimentos Técnicos em automação e tecnologia.</p>
+
+                <div class="barra-habilidade">
+                    <span style="width: 65%;"></span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Projetos -->
+        <section id="projetos">
+
+            <h2>Projetos</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Projeto</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+
+                <tbody>
 
                     <tr>
-                       <td>Currículo Online</td>
-                       <td>Primeira Versão do meu Portifólio</td>
+                        <td>Landing Page</td>
+                        <td>Página criada utilizando HTML.</td>
                     </tr>
-                    
-                </table>
-                
-            </section>
 
-            <section id="contato">
+                    <tr>
+                        <td>Currículo Online</td>
+                        <td>Primeira versão do meu portfólio.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Criador de Projetos 3d</td>
+                        <td>Modelagem 3D utilizando software especializado.</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- Contato -->
+        <section id="contato">
 
             <h2>Entre em Contato</h2>
 
-            <form action="#" method="post">
-
-                <P>
-                    <label for="assunto">Assunto</label><br>
-
-                    <input
-                        type="text"
-                        id="assunto"
-                        name="assunto">
-                <p>
-
-                    <label for="nome">Nome</label><br>
-
-                    <input
-                        type="text"
-                        id="nome"
-                        name="nome">
-
-                </p>
-
-                <p>
-
-                    <label for="email">E-mail</label><br>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email">
-
-                </p>
-
-                <p>
-                    <label for="mensagem">Mensagem</label><br>
-
-                    <textarea
-                        id="mensagem"
-                        name="mensagem"
-                        rows="5">
-                    </textarea>
-                </p>
-                <p id="contador"></p>
-
-                
-
-                <p>
-
-                    <input
-                        type="submit"
-                        value="Enviar">
-
-                </p>
-
-            
-        </main>
-
-        <footer>
-            
-            <p>&copy; 2026 Gabriel Felipe</p>
-
-            <p>E-mail: gabrielfelipeoliveira480@gmail.com</p>
-
             <p>
-                <a href="#">GitHub</a> |
-                <a href="#">LinkedIn</a>
+                E-mail:
+                <a href="mailto:gabrielfelipeoliveira480@gmail.com">
+                    gabrielfelipeoliveira480@gmail.com
+                </a>
             </p>
 
-        </footer>
-    </body>
+            <p>
+                <a 
+                    href="https://github.com/gabrielfelipe480-Neos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Meu GitHub
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Rodapé -->
+    <footer>
+
+        <p>&copy; 2026 Gabriel Felipe</p>
+
+        <p>
+            Desenvolvedor Front-End
+        </p>
+
+    </footer>
+
+</body>
+
 </html>
+
