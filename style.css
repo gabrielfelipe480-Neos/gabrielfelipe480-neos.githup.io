@@ -323,7 +323,7 @@ nav a:hover {
 
     border-radius: 5px;
 
-    box-shadow: 4px 4px 0 var(--cinza-claro);
+    box-shadow: 4px 4px 0 var(--azul);
 
     transition: 0.3s;
 }
@@ -418,6 +418,18 @@ nav a:hover {
 
 #projetos tr:hover {
     background-color: #e2e8f0;
+}
+
+#projetos a {
+    background-image: url("Indusrial.avif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -533,49 +545,5 @@ footer p {
 }
 
 
-/* =========================================
-   MODO ESCURO
-   ========================================= */
 
-body.modo-escuro {
-    background-color: #020617;
-
-    color: var(--branco);
-}
-
-body.modo-escuro #sobre,
-body.modo-escuro #contato {
-    background-color: #0f172a;
-}
-
-body.modo-escuro #habilidades {
-    background-color: #020617;
-}
-
-body.modo-escuro #projetos {
-    background-color: #1e293b;
-}
-
-body.modo-escuro h2,
-body.modo-escuro h3 {
-    color: var(--branco);
-}
-
-body.modo-escuro p {
-    color: var(--cinza-claro);
-}
-
-body.modo-escuro .habilidade {
-    background-color: #1e293b;
-
-    border-color: var(--azul);
-}
-
-body.modo-escuro #projetos table {
-    background-color: #1e293b;
-}
-
-body.modo-escuro #projetos td {
-    color: var(--branco);
-}
 
