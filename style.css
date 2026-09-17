@@ -233,13 +233,31 @@ nav a:hover {
 }
 
 
+/* Efeito ativado pelo JavaScript */
+.hero-ativo {
+    transform: scale(1.02);
+    transition: 0.5s;
+}
+
+/* Efeito no botão */
+#botaoSobre {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#botaoSobre:hover {
+    transform: translateY(-3px);
+}
+
+
+
 /* =========================================
    FOTO
    ========================================= */
 
 #hero img {
-    width: 180px;
-    height: 180px;
+    width: 350px;
+    height: 350px;
 
     object-fit: cover;
 
